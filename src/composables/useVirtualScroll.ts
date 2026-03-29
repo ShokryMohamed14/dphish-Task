@@ -11,9 +11,9 @@ export function useVirtualScroll(rowHeight = 40, containerHeight = 400, bufferSi
   const getVirtualState = (totalRowsLength: number) => {
     const totalHeight = totalRowsLength * rowHeight;
     const startIndex = Math.max(0, Math.floor(scrollTop.value / rowHeight) - bufferSize);
-    
+
     const visibleCount = Math.ceil(containerHeightRef.value / rowHeight) + (bufferSize * 2);
-    const endIndex = Math.min(totalRowsLength - 1, startIndex + visibleCount);
+    const endIndex = Math.min(totalRowsLength, startIndex + visibleCount);
 
     const offsetY = startIndex * rowHeight;
 
