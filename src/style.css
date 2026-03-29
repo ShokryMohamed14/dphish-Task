@@ -1,0 +1,4 @@
+/* Overwrite standard default styles that Vite generates */
+body {
+  margin: 0;
+}
